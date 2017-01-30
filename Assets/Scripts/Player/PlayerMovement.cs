@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float speed = 10f;
+    public float speed = 12f;
 
     Vector3 movement;           //Vector for direction of player movement
     //Animator anim;
