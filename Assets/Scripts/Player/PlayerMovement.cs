@@ -11,16 +11,16 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody playerRigidbody;  
 
     void Awake() {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update() {
+    void FixedUpdate() {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         Move(h, v);
-        //Animating(h, v);
+        Animating(h, v);
     }
 
     void Move(float h, float v) {
