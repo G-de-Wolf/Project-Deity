@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float speed = 10f;
+    public Animator playerAnim;
+    public float speed;
 
     Vector3 movement;           
-    Animator anim;
-    Rigidbody playerRigidbody;  
 
     void Awake() {
-        anim = GetComponent<Animator>();
-        playerRigidbody = GetComponent<Rigidbody>();
+
     }
 
     void FixedUpdate() {
@@ -34,6 +32,6 @@ public class PlayerMovement : MonoBehaviour {
     void Animating(float h, float v) {
         bool walking = h != 0f || v != 0f;
 
-        anim.SetBool("IsWalking", walking);
+        playerAnim.SetBool("IsWalking", walking);
     }
 }

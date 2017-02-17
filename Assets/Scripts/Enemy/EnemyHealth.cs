@@ -31,16 +31,12 @@ public class EnemyHealth : MonoBehaviour {
     }
 
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    public void TakeDamage(int amount)
     {
         if (isDead)
             return;
 
         currentHealth -= amount;
-
-        hitParticles.transform.position = hitPoint;
-
-        hitParticles.Play();
 
         if (currentHealth <= 0)
         {
@@ -53,8 +49,6 @@ public class EnemyHealth : MonoBehaviour {
     {
         isDead = true;
 
-        capsuleCollider.isTrigger = true;
-
-        Destroy(gameObject, 2f);
+        Destroy(gameObject);
     }
 }
